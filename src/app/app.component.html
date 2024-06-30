@@ -1,0 +1,43 @@
+<div class="form-container">
+  <h2>NEW USER APPLICATION</h2>
+  <h4><i>Please fill in your details</i></h4>
+  <form>
+      <div class="form-group">
+          <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname" placeholder="First Name" required> 
+      </div>
+      <div class="form-group">
+          <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname" placeholder="Last Name" required> 
+      </div>
+      <div class="form-group">
+          <input type="text" id="age" [(ngModel)]="age" name="age" placeholder="Age" required> 
+      </div>
+      <div class="form-group">
+          <input type="text" id="gender" [(ngModel)]="gender" name="gender" placeholder="Gender" required> 
+      </div>
+      <div class="form-group">
+          <input type="text" id="ethnicity" [(ngModel)]="ethnicity" name="ethnicity" placeholder="Ethnicity" required> 
+      </div>
+      <h2></h2>
+      <div class="form-group">
+        <button (click)="sendData()" style ="width:25%">Submit</button>
+      </div>
+      <table *ngIf="listNotEmpty == true">
+          <thead style = "text-align: left">
+              <tr>
+                  <th style ="width:60%">Name</th>
+                  <th style ="width:20%">Age</th>
+                  <th style ="width:20%">Gender</th>
+                  <th style ="width:20%">Ethnicity</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of listElement">
+                  <td style ="width:60%"> {{ item.name }}</td>
+                  <td style ="width:20%"> {{ item.age }}</td>
+                  <td style ="width:20%"> {{ item.gender }}</td>
+                  <td style ="width:20%"> {{ item.ethnicity }}</td>
+              </tr>
+          </tbody>
+      </table> 
+  </form>
+</div>
